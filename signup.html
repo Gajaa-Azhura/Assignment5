@@ -6,6 +6,96 @@
     <title>Sgnup</title>
 </head>
 <body>
-  <script></script>  
+   <section class="container items-center shadow-md box shadow text-white text-2xl font-bold text-gray-900">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <img src="./Assets/Images/black-paper-background.jpg" alt="logo" class="w-24">
+        <div class="text-center text-2xl font-bold text-gray-900">SignUp</div>
+        <form id="signupForm" class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 shadow-lg rounded-lg p-6 mt-16">
+            <div class="relative">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="rounded-lg shadow-lg w-full h-full object-cover fluid">
+            </div>
+            <div class="relative">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="rounded-lg shadow-lg w-full h-full object-cover fluid">
+            </div>
+            <div class="relative">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="rounded-lg shadow-lg w-full h-full object-cover fluid">
+            </div>
+            <button class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-white transition-colors text-sm md:text-base">SignUp</button>
+        </form>
+        <div id="savedName"></div>
+        <div id="savedEmail"></div>
+        <button id="clearData" class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-white transition-colors text-sm md:text-base">Clear Data</button>
+    </section>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+    const signupForm = document.getElementById("signupForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const savedName = document.getElementById("savedName");
+    const savedEmail = document.getElementById("savedEmail");
+    const clearDataButton = document.getElementById("clearData");
+
+    // Load saved data when the page loads
+    if (localStorage.getItem("userName")) {
+        savedName.textContent = "Name: " + localStorage.getItem("userName");
+        savedEmail.textContent = "Email: " + localStorage.getItem("userEmail");
+    }
+
+    signupForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        const name = nameInput.value.trim();
+        const email = email
+  <script>document.addEventListener("DOMContentLoaded", () => {
+    const signupForm = document.getElementById("signupForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const savedName = document.getElementById("savedName");
+    const savedEmail = document.getElementById("savedEmail");
+    const clearDataButton = document.getElementById("clearData");
+
+    // Load saved data when the page loads
+    if (localStorage.getItem("userName")) {
+        savedName.textContent = "Name: " + localStorage.getItem("userName");
+        savedEmail.textContent = "Email: " + localStorage.getItem("userEmail");
+    }
+
+    signupForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim(); // Not saving password
+
+        if (name && email) {
+            // Save user data in localStorage
+            localStorage.setItem("userName", name);
+            localStorage.setItem("userEmail", email);
+
+            // Display saved data
+            savedName.textContent = "Name: " + name;
+            savedEmail.textContent = "Email: " + email;
+            alert("Sign-up successful! Data saved.");
+
+            // Clear input fields after saving
+            nameInput.value = "";
+            emailInput.value = "";
+            passwordInput.value = "";
+        }
+    });
+
+    // Clear data button
+    clearDataButton.addEventListener("click", () => {
+        localStorage.clear();
+        savedName.textContent = "";
+        savedEmail.textContent = "";
+        alert("Data cleared.");
+    });
+});
+</script>  
 </body>
 </html>
