@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sgnup</title>
+    <title>Signup</title>
 </head>
 <body>
-   <section class="container items-center shadow-md box shadow text-white text-2xl font-bold text-gray-900">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-        <img src="./Assets/Images/black-paper-background.jpg" alt="logo" class="w-24">
-        <div class="text-center text-2xl font-bold text-gray-900">SignUp</div>
-        <form id="signupForm" class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 shadow-lg rounded-lg p-6 mt-16">
-            <div class="relative">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" class="rounded-lg shadow-lg w-full h-full object-cover fluid">
+   <section class="font-sans max-w-2xl mx-auto p-5 mt-10 bg-white shadow-lg h-fitscreen items-center justify-center">
+    <div class="bg-gray-100 p-5 rounded-lg mb-5">
+        <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+        <form id="signupForm">
+            <div class="mb-4">
+                <label for="name" class="block mb-1">Name:</label>
+                <input type="text" id="name" required 
+                       class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-            <div class="relative">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="rounded-lg shadow-lg w-full h-full object-cover fluid">
+            <div class="mb-4">
+                <label for="email" class="block mb-1">Email:</label>
+                <input type="email" id="email" required 
+                       class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-            <div class="relative">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="rounded-lg shadow-lg w-full h-full object-cover fluid">
+            <div class="mb-4">
+                <label for="password" class="block mb-1">Password:</label>
+                <input type="password" id="password" required 
+                       class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
-            <button class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-white transition-colors text-sm md:text-base">SignUp</button>
+            <button type="submit" 
+                    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
+                Sign Up
+            </button>
         </form>
-        <div id="savedName"></div>
-        <div id="savedEmail"></div>
-        <button id="clearData" class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-white transition-colors text-sm md:text-base">Clear Data</button>
-    </section>
+    </div>
+
+    <div class="bg-blue-50 p-4 rounded-lg">
+        <h3 class="text-xl font-semibold mb-2">Saved Data</h3>
+        <p id="savedName" class="mb-1"></p>
+        <p id="savedEmail" class="mb-3"></p>
+        <button id="clearData" 
+                class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors">
+            Clear Saved Data
+        </button>
+    </div>
+</section>
     <script>document.addEventListener("DOMContentLoaded", () => {
     const signupForm = document.getElementById("signupForm");
     const nameInput = document.getElementById("name");
