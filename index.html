@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASSIGNMENT5</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for dark mode */
+        .dark .text-gray-900 {
+            color: #e5e7eb; /* Tailwind's text-gray-200 */
+        }
+        .dark .bg-gray-900 {
+            background-color: #111827; /* Tailwind's bg-gray-800 */
+        }
+        .dark .shadow-lg {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Keep shadow subtle */
+        }
+        .dark .bg-black {
+            background-color: #374151; /* Tailwind's bg-gray-600 */
+        }
+        .dark .text-white {
+            color: #f9fafb; /* Tailwind's text-gray-100 */
+        }
+        .dark .swiper-button-prev,
+        .dark .swiper-button-next {
+            color: #e5e7eb; /* Tailwind's text-gray-200 */
+        }
+        .dark .swiper-pagination-bullet-active {
+            background: #f9fafb; /* White active dot */
+        }
+        .dark .group-hover\:bg-white:hover {
+            background-color: #4b5563; /* Tailwind's bg-gray-500 on hover */
+            color: #f9fafb;
+        }
+        .dark .bg-white {
+            background-color: #1f2937; /* Tailwind's bg-gray-700 */
+        }
+        .dark .text-gray-900:hover {
+            color: #f9fafb;
+        }
+        .dark .bg-opacity-50 {
+            background-color: rgba(0, 0, 0, 0.75); /* Darker overlay */
+        }
+        .dark .bg-white.text-gray-900 { /* For the "View Sequel" button */
+            background-color: #e5e7eb;
+            color: #111827;
+        }
+        .dark .bg-white.text-gray-900:hover {
+            background-color: #d1d5db;
+            color: #111827;
+        }
+        </style>
 </head>
 <body class="bg-white text-gray-300 font-sans">
     <!--section 01(nav)-->
@@ -24,6 +70,12 @@
                     <button class="text-gray-300 hover:text-white transition-colors text-sm md:text-base px-3 py-2 rounded-md">Pages ▼</button>
                     <div class="relative mt-2 w-48 bg-gray-900 text-white rounded-md shadow-lg py-2 hidden group-hover:block">
                         <a href="contact.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white text-sm">Contact</a>
+                    </div>
+                    <div class="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <button id="theme-toggle" class="fixed top-4 right-4 bg-gray-200 text-gray-700 px-3 py-2 rounded-md hover:bg-gray-300 focus:outline-none transition-colors duration-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">
+                        Dark Mode
+                    </button>
+                >
                     </div>
                 </div>
                 <a href="signup.html" class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-white transition-colors text-sm md:text-base">SignUp</a>
