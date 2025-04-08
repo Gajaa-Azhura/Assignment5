@@ -69,4 +69,30 @@
             },
         }
     });
-
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    if (themeToggle) {
+        // Set initial theme based on local storage or default to light
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            // Store the theme preference in local storage
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            updateButtonText();
+        });
+    
+        function updateButtonText() {
+            if (html.classList.contains('dark')) {
+                themeToggle.textContent = 'Light Mode';
+            } else {
+                themeToggle.textContent = 'Dark Mode';
+            }
+        }
+    
+        // Check for saved theme preference on page load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            html.classList.toggle('dark', savedTheme === 'dark');
+        }
+        updateButtonText();
+    }
