@@ -139,7 +139,7 @@
                 <div class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-2 rounded-bl-lg">$149.99</div>
             </div>
             <div class="relative group">
-                <img src="./Assets/Images/3924ac78-efea-4f9e-8b13-b0851f3bdca6.jpg" alt="babayaga" class="rounded-lg shadow-lg w-full h-full object-cover">
+                <img src="./Assets/Images/John Wick ✖️.jpg" alt="babayaga" class="rounded-lg shadow-lg w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <p class="text-white text-center px-4">A sleek and stylish suit inspired by John Wick's iconic look.</p>
                 </div>
@@ -147,7 +147,7 @@
                 <div class="absolute top-0 right-0 bg-gray-900 text-white px-4 py-2 rounded-bl-lg">$149.99</div>
             </div>
             <div class="relative group">
-                <img src="./Assets/Images/3924ac78-efea-4f9e-8b13-b0851f3bdca6.jpg" alt="babayaga" class="rounded-lg shadow-lg w-full h-full object-cover">
+                <img src="./Assets/Images/John Wick (1).jpg" alt="babayaga" class="rounded-lg shadow-lg w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <p class="text-white text-center px-4">A sleek and stylish suit inspired by John Wick's iconic look.</p>
                 </div>
@@ -201,7 +201,7 @@
                     <p class="mt-4">Shynx, 123 Main Street, New York, NY 10001</p>
                     <p class="mt-4">Phone: +1 123 456 7890</p> 
                 </div>
-                
+                <button id="back-to-top" class="fixed bottom-4 right-4 bg-gray-500 text-white px-4 py-2 rounded-full hidden">↑</button>
                 <div class="text-center col-span-3 mt-8">
                     <p>&copy; 2025 Shynx. All rights reserved.</p>
                 </div>
@@ -210,5 +210,30 @@
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="script.js"></script> 
+   <script>
+document.querySelectorAll('nav a').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.remove('hidden');
+    } else {
+        backToTopButton.classList.add('hidden');
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+   </script>
 </body>
 </html>
